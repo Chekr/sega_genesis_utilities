@@ -13,7 +13,7 @@ $(BUILD_DIR):
 	${MKDIR_P} ${BUILD_DIR}
 
 $(BUILD_DIR)/program: | directory
-	$(CC) -o ${BUILD_DIR}/bmp_to_strite.elf main.cpp
+	$(CC) -o ${BUILD_DIR}/bmp_to_tiles.elf main.cpp
 
 clean:
 	rm -rf $(BUILD_DIR)

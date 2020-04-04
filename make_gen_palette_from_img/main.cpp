@@ -29,7 +29,7 @@ int main(int argc, char** argv)
 
 	//DC.W    $0000,$0044,$0066,$0088
 
-	for (auto i = dataSize - 3; i >= 0; i -= 3)
+	for (auto i = 0; i < dataSize; i += 3)
 	{
 		temp = bmp.data[i];
 		bmp.data[i] =  bmp.data[i+2];

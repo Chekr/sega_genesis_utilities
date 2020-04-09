@@ -10,13 +10,55 @@ using std::stringstream;
 
 #include <map>
 using std::map;
+using std::multimap;
 #include <vector>
 using std::vector;
-
+#include <algorithm>
+#include <utility>
+#include <iostream>
+using std::ostringstream;
+#include <iterator>
+using std::ostream_iterator;
 
 #include "bitmap.h"
 
+template<typename A, typename B>
+std::pair<B,A> FlipPair(const std::pair<A,B> &p)
+{
+    return std::pair<B,A>(p.second, p.first);
+}
 
+template<typename A, typename B>
+std::multimap<B,A> FlipMap(const std::map<A,B> &src)
+{
+    multimap<B,A> dst;
+    std::transform(src.begin(), src.end(), std::inserter(dst, dst.begin()), 
+                   FlipPair<A,B>);
+    return dst;
+}
+
+string FormatTile(const string &in, const size_t tileWidth)
+{
+	vector<string> out;
+    out.reserve(in.size() + in.size() / tileWidth);
+
+	// split the string
+    for(int i = 0; i < tileWidth; i++)
+	{
+        out.push_back(in.substr(i*tileWidth, tileWidth));
+    }
+
+	// reverse the string order
+	std::reverse(out.begin(),out.end());
+
+	// compile back to a string
+	ostringstream os;
+	std::copy(out.begin(), out.end()-1, 
+		        ostream_iterator<string>(os, "\n")); 
+	os << out.back();
+
+    return os.str();
+}
 
 int main(int argc, char** argv)
 {
@@ -35,21 +77,19 @@ int main(int argc, char** argv)
 
 	cout << "Datasize: " << dataSize << endl;
 
-	std::unordered_set<string> palette;
-
-	//DC.W    $0000,$0044,$0066,$0088
 
 	map<string, int> paletteIndex;
-	int currentPaletteIndex = 0;
-
-	vector<stringstream> tiles;
+	int currentPaletteIndex = 1;
 	
 	int pixelCount = 0;
-
 	int widthCounter = 0;
 	int spriteRowCounter = 0;
 
 	int numTiles = (bmp.infoHeader.width * bmp.infoHeader.height) / 64;
+
+	vector<stringstream> tiles;
+	tiles.reserve(numTiles);
+
 	cout << "Width: " << bmp.infoHeader.width << endl;
 	cout << "Height: " << bmp.infoHeader.height << endl;
 	cout << "Num Tiles: " << numTiles << endl;
@@ -64,11 +104,17 @@ int main(int argc, char** argv)
 
 	cout << "start...\n";
 
-	for (auto i = 0; i < dataSize; i += 3)
+	unsigned char rbSwapTmp;
+
+	for(int i = 0; i < dataSize; i += 3)
 	{
-		temp = bmp.data[i];
-		bmp.data[i] =  bmp.data[i+2];
-		bmp.data[i+2] = temp;
+		// Swap R and B values:
+		//if(bmp.data[i] != bmp.data[i+2])
+		//{
+		//	rbSwapTmp = bmp.data[i];
+		//	bmp.data[i] = bmp.data[i+2];
+		//	bmp.data[i+2] = rbSwapTmp;
+		//}
 
 		stringstream ssPalette;
 		ssPalette << "$0" << std::uppercase << std::hex <<	
@@ -77,8 +123,6 @@ int main(int argc, char** argv)
 			(int(bmp.data[i] & 0xff) >> 4);
 
 		string color = ssPalette.str();
-
-		palette.insert(color);
 
 		if(paletteIndex.find(color) == paletteIndex.end() )
 		{
@@ -101,25 +145,49 @@ int main(int argc, char** argv)
 		}
 		pixelCount++;
 	}
-	cout << "Pixel Count: " <<  pixelCount << endl;
 
-	//for(auto color : palette)
-	//{
-	//	cout << color << endl;
-	//}
+	cout << endl;
+
+	int numFinalTiles = tiles.size();
+	int tilesByWidth = bmp.infoHeader.width / 8;
+	int tilesByHeight = bmp.infoHeader.height / 8;
+
+	vector<string> reorderedTiles;
+
+	// Reorder list
+	for(int i = 0; i < numFinalTiles; i += tilesByWidth)
+	{
+		for(int j = 0; j < tilesByWidth; j++)
+		{
+			reorderedTiles.push_back(tiles[numFinalTiles-i+j-tilesByWidth].str());
+		}
+	}
+
+	// Format all tiles
+	for(int i = 0; i < numFinalTiles; i++)
+	{
+		reorderedTiles[i] = FormatTile(reorderedTiles[i], size_t(8));;
+	}
+
+
+	cout << "Pixel Count: " <<  pixelCount << endl;
+	cout << "Tile Count: " << tiles.size() << endl;
+
 	cout << "stop...\n"; 
 
 	cout << "palette\n";
-	for(auto const& palette : paletteIndex)
+	multimap<int, string> newMap = FlipMap(paletteIndex);
+	newMap.insert(std::pair <int, string> (0, "$0000"));
+	for(auto const& palette : newMap)
 	{
 		cout << palette.first << "," << palette.second << endl;
 	}
 
-	cout << "tiles\n";
-	int c = 0;
-	for (auto const& tile : tiles)
+	int c;   
+	for (auto const& tile : reorderedTiles)
 	{
-		cout << c << ": " << tile.str() << endl;
+		cout << c << ": \n";
+		cout << tile << endl;
 		c++;
 	}
 

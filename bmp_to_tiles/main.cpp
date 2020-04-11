@@ -62,10 +62,10 @@ string FormatTile(const string &in, const size_t tileWidth)
 
 int main(int argc, char** argv)
 {
-	if(argc != 2)
+	if(argc != 2 && argc != 3)
 	{
 		std::cerr << "Usage: " << argv[0] 
-			<< " filename.bmp" << std::endl;
+			<< " filename.bmp [palette.txt]" << std::endl;
 		return 1;
 	}
 
@@ -79,7 +79,28 @@ int main(int argc, char** argv)
 
 
 	map<string, int> paletteIndex;
-	int currentPaletteIndex = 1;
+	if(argc == 3)
+	{
+		std::ifstream file(argv[2]);
+		if(file.is_open())
+		{
+			string line;
+			while(std::getline(file, line))
+			{
+				if(line.length() == 7);
+				{
+					paletteIndex[line.substr(2,5)] = std::stoi(line.substr(0,1));
+				}
+			}
+		}
+	}
+
+	if(paletteIndex.size() == 0)
+	{
+		paletteIndex["$0000"] = 0;
+	}
+	int currentPaletteIndex = paletteIndex.size();
+
 	
 	int pixelCount = 0;
 	int widthCounter = 0;
@@ -177,13 +198,12 @@ int main(int argc, char** argv)
 
 	cout << "palette\n";
 	multimap<int, string> newMap = FlipMap(paletteIndex);
-	newMap.insert(std::pair <int, string> (0, "$0000"));
 	for(auto const& palette : newMap)
 	{
 		cout << palette.first << "," << palette.second << endl;
 	}
 
-	int c;   
+	int c = 1;   
 	for (auto const& tile : reorderedTiles)
 	{
 		cout << c << ": \n";

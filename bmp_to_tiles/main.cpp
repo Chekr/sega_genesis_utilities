@@ -130,12 +130,12 @@ int main(int argc, char** argv)
 	for(int i = 0; i < dataSize; i += 3)
 	{
 		// Swap R and B values:
-		//if(bmp.data[i] != bmp.data[i+2])
-		//{
-		//	rbSwapTmp = bmp.data[i];
-		//	bmp.data[i] = bmp.data[i+2];
-		//	bmp.data[i+2] = rbSwapTmp;
-		//}
+		if(bmp.data[i] != bmp.data[i+2])
+		{
+			rbSwapTmp = bmp.data[i];
+			bmp.data[i] = bmp.data[i+2];
+			bmp.data[i+2] = rbSwapTmp;
+		}
 
 		stringstream ssPalette;
 		ssPalette << "$0" << std::uppercase << std::hex <<	

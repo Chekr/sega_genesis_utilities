@@ -12,29 +12,39 @@ using std::vector;
 struct BitmapFileHeader
 {
 public:
-	uint16_t fileType = 0; // 0x4D42 (bitmap)
-	uint32_t fileSize = 0;
-	uint16_t reserved1 = 0;
-	uint16_t reserved2 = 0;
-	uint32_t dataOffset = 0;
+	uint16_t fileType{0}; // 0x4D42 (bitmap)
+	uint32_t fileSize{0};
+	uint16_t reserved1{0};
+	uint16_t reserved2{0};
+	uint32_t dataOffset{0};
 };
 
 // DIB Header, BITMAPCOREHEADER2 has an extra 24 bytes over this
 struct WindowsBitmapInfoHeader // BITMAPINFOHEADER
 {
 public:
-	uint32_t size = 0;
-	int32_t width = 0;
-	int32_t height = 0;
+	uint32_t size{0};
+	int32_t width{0};
+	int32_t height{0};
 
-	uint16_t planes = 1; // must be 1
-	uint16_t bitsPerPixel = 0; // 1, 4, 8, 16, 24, 32
-	uint32_t compressionMethod = 0;
-	uint32_t imageSize = 0;
-	int32_t horizontalResolition = 0; // pixel per meter
-	int32_t verticalResolution = 0; // pixel per meter
-	uint32_t colorsInPalette = 0; // 0 to 2^n
-	uint32_t numberImportantColorsUsed = 0; // 0 when all are important
+	uint16_t planes{1}; // must be 1
+	uint16_t bitsPerPixel{0}; // 1, 4, 8, 16, 24, 32
+	uint32_t compressionMethod{0};
+	uint32_t imageSize{0};
+	int32_t horizontalResolition{0}; // pixel per meter
+	int32_t verticalResolution{0}; // pixel per meter
+	uint32_t colorsInPalette{0}; // 0 to 2^n
+	uint32_t numberImportantColorsUsed{0}; // 0 when all are important
+};
+
+struct BitmapColorHeader // Only included in 32-bit bitmaps
+{
+	uint32_t redMask{0x00ff0000};
+	uint32_t greenMask{0x00ff00};
+	uint32_t blueMask{0x00ff00ff};
+	uint32_t alphaMask{0xff000000};
+	uint32_t colorSpaceType{0x73524742}; // "sRGB"
+	uint32_t unused[16]{0};
 };
 
 #pragma pack(pop)
@@ -99,7 +109,7 @@ public:
 			if(infoHeader.bitsPerPixel == 32)
 			{
 				// TODO: implement this
-				throw std::runtime_error("Cannot support 32-bit bitmnaps (transparency layer included)");
+				throw std::runtime_error("Cannot support 32-bit bitmaps (transparency layer included)");
 			}
 
 			// Go to pixel data

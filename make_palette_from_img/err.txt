@@ -1,0 +1,41 @@
+main.cpp: In function ‘int main(int, char**)’:
+main.cpp:79:5: error: ‘PaletteType’ was not declared in this scope
+   79 |     PaletteType type;
+      |     ^~~~~~~~~~~
+main.cpp:92:21: error: ‘type’ was not declared in this scope
+   92 |                     type = MEGA_DRIVE;
+      |                     ^~~~
+main.cpp:92:28: error: ‘MEGA_DRIVE’ was not declared in this scope
+   92 |                     type = MEGA_DRIVE;
+      |                            ^~~~~~~~~~
+main.cpp:96:21: error: ‘type’ was not declared in this scope
+   96 |                     type = MASTER_SYSTEM;
+      |                     ^~~~
+main.cpp:96:28: error: ‘MASTER_SYSTEM’ was not declared in this scope
+   96 |                     type = MASTER_SYSTEM;
+      |                            ^~~~~~~~~~~~~
+main.cpp:100:21: error: ‘type’ was not declared in this scope
+  100 |                     type = GAMEGEAR;
+      |                     ^~~~
+main.cpp:100:28: error: ‘GAMEGEAR’ was not declared in this scope
+  100 |                     type = GAMEGEAR;
+      |                            ^~~~~~~~
+main.cpp:104:21: error: ‘type’ was not declared in this scope
+  104 |                     type = TMS;
+      |                     ^~~~
+main.cpp:104:28: error: ‘TMS’ was not declared in this scope
+  104 |                     type = TMS;
+      |                            ^~~
+main.cpp:108:21: error: ‘type’ was not declared in this scope
+  108 |                     type = RGB;
+      |                     ^~~~
+main.cpp:108:28: error: ‘RGB’ was not declared in this scope
+  108 |                     type = RGB;
+      |                            ^~~
+main.cpp:132:17: error: ‘type’ was not declared in this scope
+  132 |                 type)
+      |                 ^~~~
+main.cpp:128:13: error: ‘FormatColor’ was not declared in this scope
+  128 |             FormatColor(
+      |             ^~~~~~~~~~~
+make: *** [makefile:16: ../bin/program] Error 1

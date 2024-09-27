@@ -1,0 +1,415 @@
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h: In instantiation of ‘constexpr bool std::less<_Tp>::operator()(const _Tp&, const _Tp&) const [with _Tp = RgbColor]’:
+/usr/include/c++/11/bits/stl_map.h:499:32:   required from ‘std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type& std::map<_Key, _Tp, _Compare, _Alloc>::operator[](const key_type&) [with _Key = RgbColor; _Tp = short int; _Compare = std::less<RgbColor>; _Alloc = std::allocator<std::pair<const RgbColor, short int> >; std::map<_Key, _Tp, _Compare, _Alloc>::mapped_type = short int; std::map<_Key, _Tp, _Compare, _Alloc>::key_type = RgbColor]’
+main.cpp:98:33:   required from here
+/usr/include/c++/11/bits/stl_function.h:400:20: error: no match for ‘operator<’ (operand types are ‘const RgbColor’ and ‘const RgbColor’)
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_pair.h:489:5: note: candidate: ‘template<class _T1, class _T2> constexpr bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  489 |     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_pair.h:489:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::pair<_T1, _T2>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note: candidate: ‘template<class _Iterator> constexpr bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  425 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  464 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1557:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)’
+ 1557 |     operator<(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1557:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::move_iterator<_IteratorL>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/ios:40,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_iterator.h:1613:5: note: candidate: ‘template<class _Iterator> constexpr bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)’
+ 1613 |     operator<(const move_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1613:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::move_iterator<_IteratorL>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/string_view:589:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator<(std::basic_string_view<_CharT, _Traits>, std::basic_string_view<_CharT, _Traits>)’
+  589 |     operator< (basic_string_view<_CharT, _Traits> __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/string_view:589:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘RgbColor’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/string_view:595:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator<(std::basic_string_view<_CharT, _Traits>, std::__type_identity_t<std::basic_string_view<_CharT, _Traits> >)’
+  595 |     operator< (basic_string_view<_CharT, _Traits> __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/string_view:595:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘RgbColor’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/string_view:602:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator<(std::__type_identity_t<std::basic_string_view<_CharT, _Traits> >, std::basic_string_view<_CharT, _Traits>)’
+  602 |     operator< (__type_identity_t<basic_string_view<_CharT, _Traits>> __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/string_view:602:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘RgbColor’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6340:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 6340 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6340:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6353:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const _CharT*)’
+ 6353 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6353:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/basic_string.h:6365:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 6365 |     operator<(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6365:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   mismatched types ‘const _CharT*’ and ‘RgbColor’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/tuple:39,
+                 from /usr/include/c++/11/bits/hashtable_policy.h:34,
+                 from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_set:46,
+                 from main.cpp:3:
+/usr/include/c++/11/array:311:5: note: candidate: ‘template<class _Tp, long unsigned int _Nm> bool std::operator<(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)’
+  311 |     operator<(const array<_Tp, _Nm>& __a, const array<_Tp, _Nm>& __b)
+      |     ^~~~~~~~
+/usr/include/c++/11/array:311:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::array<_Tp, _Nm>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/hashtable_policy.h:34,
+                 from /usr/include/c++/11/bits/hashtable.h:35,
+                 from /usr/include/c++/11/unordered_set:46,
+                 from main.cpp:3:
+/usr/include/c++/11/tuple:1570:5: note: candidate: ‘template<class ... _TElements, class ... _UElements> constexpr bool std::operator<(const std::tuple<_Tps ...>&, const std::tuple<_UTypes ...>&)’
+ 1570 |     operator<(const tuple<_TElements...>& __t,
+      |     ^~~~~~~~
+/usr/include/c++/11/tuple:1570:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::tuple<_Tps ...>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/list:63,
+                 from main.cpp:5:
+/usr/include/c++/11/bits/stl_list.h:2050:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator<(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)’
+ 2050 |     operator<(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_list.h:2050:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::__cxx11::list<_Tp, _Alloc>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/map:61,
+                 from main.cpp:6:
+/usr/include/c++/11/bits/stl_map.h:1501:5: note: candidate: ‘template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::map<_Key, _Tp, _Compare, _Allocator>&, const std::map<_Key, _Tp, _Compare, _Allocator>&)’
+ 1501 |     operator<(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_map.h:1501:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Allocator>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/map:62,
+                 from main.cpp:6:
+/usr/include/c++/11/bits/stl_multimap.h:1166:5: note: candidate: ‘template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::multimap<_Key, _Tp, _Compare, _Allocator>&, const std::multimap<_Key, _Tp, _Compare, _Allocator>&)’
+ 1166 |     operator<(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_multimap.h:1166:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Allocator>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/vector:67,
+                 from main.cpp:7:
+/usr/include/c++/11/bits/stl_vector.h:1930:5: note: candidate: ‘template<class _Tp, class _Alloc> bool std::operator<(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)’
+ 1930 |     operator<(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_vector.h:1930:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/locale_conv.h:41,
+                 from /usr/include/c++/11/locale:43,
+                 from /usr/include/c++/11/iomanip:43,
+                 from main.cpp:14:
+/usr/include/c++/11/bits/unique_ptr.h:795:5: note: candidate: ‘template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)’
+  795 |     operator<(const unique_ptr<_Tp, _Dp>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/unique_ptr.h:795:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/locale_conv.h:41,
+                 from /usr/include/c++/11/locale:43,
+                 from /usr/include/c++/11/iomanip:43,
+                 from main.cpp:14:
+/usr/include/c++/11/bits/unique_ptr.h:807:5: note: candidate: ‘template<class _Tp, class _Dp> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)’
+  807 |     operator<(const unique_ptr<_Tp, _Dp>& __x, nullptr_t)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/unique_ptr.h:807:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/locale_conv.h:41,
+                 from /usr/include/c++/11/locale:43,
+                 from /usr/include/c++/11/iomanip:43,
+                 from main.cpp:14:
+/usr/include/c++/11/bits/unique_ptr.h:816:5: note: candidate: ‘template<class _Tp, class _Dp> bool std::operator<(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)’
+  816 |     operator<(nullptr_t, const unique_ptr<_Tp, _Dp>& __x)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/unique_ptr.h:816:5: note:   template argument deduction/substitution failed:
+In file included from /usr/include/c++/11/string:48,
+                 from /usr/include/c++/11/bits/locale_classes.h:40,
+                 from /usr/include/c++/11/bits/ios_base.h:41,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/bits/stl_function.h:400:20: note:   ‘const RgbColor’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+  400 |       { return __x < __y; }
+      |                ~~~~^~~~~
+In file included from /usr/include/c++/11/bits/ios_base.h:46,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:1:
+/usr/include/c++/11/system_error:269:3: note: candidate: ‘bool std::operator<(const std::error_code&, const std::error_code&)’
+  269 |   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/11/system_error:269:31: note:   no known conversion for argument 1 from ‘const RgbColor’ to ‘const std::error_code&’
+  269 |   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+      |             ~~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/11/system_error:398:3: note: candidate: ‘bool std::operator<(const std::error_condition&, const std::error_condition&)’
+  398 |   operator<(const error_condition& __lhs,
+      |   ^~~~~~~~
+/usr/include/c++/11/system_error:398:36: note:   no known conversion for argument 1 from ‘const RgbColor’ to ‘const std::error_condition&’
+  398 |   operator<(const error_condition& __lhs,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~^~~~~
+make: *** [makefile:16: ../bin/program] Error 1
